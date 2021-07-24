@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User updating</title>
+</head>
+<body>
+<h1 align="center">Please enter user updating data</h1>
+<div align="center">
+    <form action="update" method="post" modelAttribute="user">
+        <table border="0" cellpadding="5">
+            <<tr>
+            <td>Id:</td>
+            <td><input type="text" id="id" name="id" th:value=${user.id} readonly>
+            </td>
+        </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="firstName" name="firstName" th:value=${user.firstName}></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="surname" name="surname" th:value=${user.surname}></td>
+            </tr>
+            <tr>
+                <td>Year</td>
+                <td><input type="text" id="age" name="age" th:value=${user.age}></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" id="username" name="username" th:value=${user.username}></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" id="password" name="password" th:value=${user.password}></td>
+            </tr>
+            <tr>
+                <input th:type="checkbox" th:id="adminId" th:name="role" th:value="ROLE_ADMIN">
+                <label th:for="adminId">Admin</label>
+                <input th:type="checkbox" th:id="userId" th:name="role" th:value="ROLE_USER">
+                <label th:for="userId">User</label>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><input type="submit" value="Update"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Users Base</title>
+</head>
+<body>
+<div align="center">
+  <h1>User manager</h1>
+  <h2>Admin`s page</h2>
+</div>
+<br>
+<div align="center">
+  <form method="get" action="admin/search" modelAttribute="id">
+    <input type="text" id="id" name="id" placeholder="Enter user ID">
+    <input type="submit" name="search" value="Search">
+  </form>
+</div>
+<br>
+<div align="center">
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Age</th>
+      <th>Username</th>
+      <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--/*@thymesVar id="userList" type="app.model.User"*/-->
+    <div th:each="user: ${userList}">
+      <tr cols>
+        <td th:text=${user.id} th:aling="center"></td>
+        <td th:text=${user.firstName} th:aling="center"></td>
+        <td th:text=${user.surname} th:aling="center"></td>
+        <td th:text=${user.age} th:aling="center"></td>
+        <td th:text=${user.username} th:aling="center"></td>
+        <td th:text=${user.password} th:aling="center"></td>
+        <td align="center">
+          <a th:href="@{admin/userUpdating?id=} + ${user.id}">Edit</a>
+          <a th:href="@{admin/delete?id=} + ${user.id}">Delete</a>
+        </td>
+      </tr>
+    </div>
+    </tbody>
+  </table>
+</div>
+<br>
+<div align="center">
+  <a href="admin/userAdding">Add new User ></a>
+</div>
+<br/>
+<div align="center">
+  <a href="/login">Sign Out ></a>
+</div>
+<br/>
+</body>
+</html>

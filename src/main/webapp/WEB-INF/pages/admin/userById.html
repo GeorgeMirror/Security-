@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User by id</title>
+</head>
+<body>
+<div align="center">
+    <table border="1" cellpadding="5">
+        <tr>
+            <td>Id:</td>
+            <td th:text=${userById.id}></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text=${userById.firstName}></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td th:text=${userById.surname}></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td th:text=${userById.age}></td>
+        </tr><tr>
+        <td>Username</td>
+        <td th:text=${userById.username}></td>
+    </tr><tr>
+        <td>Age</td>
+        <td th:text=${userById.password}></td>
+    </tr>
+    </table>
+    <h3><a href="/admin">Return</a></h3>
+</div>
+</body>
+</html>
